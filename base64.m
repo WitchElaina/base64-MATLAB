@@ -5,7 +5,7 @@ function output = base64(my_string)
     % 初始化加密后字符串
     ans = '';
     % 获取输入字符串长度
-    len = size(my_string)
+    len = size(my_string);
     % 将字符串转换成ASCII码
     ascii_codes=double(my_string);
     [row, col ] = size(ascii_codes);
@@ -15,13 +15,13 @@ function output = base64(my_string)
     for i = 1:col
         bit_stream = [bit_stream, dec2bin(ascii_codes(i), 8)];
     end
-    [rol, col] = size(bit_stream)
+    [row, col] = size(bit_stream);
 
     % 将比特流补全至24的倍数, 并计算空位起点
     fill_start = col;
     fill_start_setted = 0;
-    while mod(col, 24) != 0
-        if fill_start_setted != 1
+    while not (mod(col, 24) == 0)
+        if not (fill_start_setted == 1)
             if (mod(col, 8) == 0 && (col / 8) > len(1)*8) 
                 fill_start = col;
                 fill_start_setted = 1;
