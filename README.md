@@ -77,9 +77,12 @@ $$
 > 公式二
 
 $$
-mod(len\times 8-z, 6) = 0
-mod(len, 8) = 0
-z>len
+\begin{cases}
+mod(len\times 8-z, 6) = 0 &\\
+mod(len, 8) = 0 &\\
+z>len 
+\end{cases}
+
 $$
 求出满足上述关系的最小z即可。
 
